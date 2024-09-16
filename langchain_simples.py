@@ -7,12 +7,10 @@ import os
 # Load environment variables from .env file
 load_dotenv()
 
-
 # Define variables
 numero_de_dias = 7
 numero_de_criancas = 2
 atividade = "praia"
-
 
 # Define the prompt template and fill in the variables
 template = PromptTemplate.from_template(
