@@ -6,8 +6,6 @@ from dotenv import load_dotenv
 import os
 from langchain_core.pydantic_v1 import Field, BaseModel
 
-from langchain_cadeia import result
-
 load_dotenv()
 set_debug(True)
 
