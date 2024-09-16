@@ -21,7 +21,7 @@ llm = ChatOpenAI(api_key=os.getenv("OPENAI_API_KEY") ,
 
 # Define variables
 modelo_cidade = ChatPromptTemplate.from_template(
-    "Sugira uma cidade dado meu interesse por {interesse}"
+    "Sugira uma cidade dado meu interesse por {interesse}. A sua saída deve ser SOMENTE da cidade. Cidade: "
 )
 
 modelo_restaurante = ChatPromptTemplate.from_template(
@@ -42,7 +42,6 @@ cadeia_cultural = LLMChain(prompt=modelo_cultural, llm=llm)
 # Create the main chain with all the chains together
 cadeia = SimpleSequentialChain(chains=[cadeia_cidade,cadeia_restaurante,cadeia_cultural],
                                verbose=True)
-
 
 # Set the interests
 result = cadeia.invoke("praias")
